@@ -8,6 +8,8 @@ include tools/scripts/Makefile.include
 include tools/build/Makefile.include
 include tools/scripts/Makefile.arch
 
+.DEFAULT_GOAL = all
+
 libapi: FORCE
 	$(call descend,tools/lib/api)
 
