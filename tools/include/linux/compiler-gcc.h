@@ -16,8 +16,11 @@
 # define __fallthrough __attribute__ ((fallthrough))
 #endif
 
+/* GCC did not support __has_attribute until 5.1. */
+#ifdef __has_attribute
 #if __has_attribute(__error__)
 # define __compiletime_error(message) __attribute__((error(message)))
+#endif
 #endif
 
 /* &a[0] degrades to a pointer: a different type from an array */
